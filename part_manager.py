@@ -10,7 +10,11 @@ def populate_list():
         parts_list.insert(END, row)
 
 def add_item():
-    print('Add')
+    print(db.insert(part_text.get(), customer_text.get(), retailer_text.get(), price_text.get()))
+    parts_list.delete(0, END)
+    parts_list.insert(END, (part_text.get(), customer_text.get(), retailer_text.get(), price_text.get()))
+    populate_list()
+    
 
 def remove_item():
     print('Remove')

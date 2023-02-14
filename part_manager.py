@@ -1,8 +1,13 @@
 
 from tkinter import *
+from db import Database
+
+db = Database('store.db')
 
 def populate_list():
-    print('populate')
+    parts_list.delete(0, END)
+    for row in db.fetch():
+        parts_list.insert(END, row)
 
 def add_item():
     print('Add')
@@ -78,6 +83,6 @@ app.geometry('800x550')
 
 # Populate data
 populate_list()
-
+populate_list()
 #Start program
 app.mainloop()

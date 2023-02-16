@@ -36,7 +36,8 @@ def select_item(event):
 
 
 def remove_item():
-    print('Remove')
+    db.remove(selected_item[0])
+    populate_list()
 
 def update_item():
     print('Update')
@@ -109,6 +110,6 @@ app.geometry('800x550')
 
 # Populate data
 populate_list()
-populate_list()
+
 #Start program
 app.mainloop()
